@@ -1,0 +1,100 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:5173",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "Sony BRAVIA Remote",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["http://*", "https://*"]
+      },
+      "shell": {
+        "all": false,
+        "open": true,
+        "execute": true,
+        "sidecar": false,
+        "scope": [
+          {
+            "name": "adb",
+            "cmd": "/opt/homebrew/bin/adb",
+            "args": true
+          },
+          {
+            "name": "adb-intel",
+            "cmd": "/usr/local/bin/adb",
+            "args": true
+          },
+          {
+            "name": "adb-linux",
+            "cmd": "/usr/bin/adb",
+            "args": true
+          },
+          {
+            "name": "adb-windows",
+            "cmd": "adb",
+            "args": true
+          }
+        ]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "Utility",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.sonyremote.app",
+      "longDescription": "Cross-platform Sony BRAVIA TV remote control application",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "Sony BRAVIA Remote",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' http://* https://*; img-src 'self' data: http://* https://*; style-src 'self' 'unsafe-inline'"
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 800,
+        "width": 400,
+        "resizable": true,
+        "title": "Sony BRAVIA Remote",
+        "minWidth": 350,
+        "minHeight": 600
+      }
+    ]
+  }
+}
